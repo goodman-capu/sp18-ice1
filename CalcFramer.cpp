@@ -10,7 +10,7 @@ void CalcFramer::append(string chars)
 	// PUT YOUR CODE HERE
 	messageBuffer += chars;
 	while (true) {
-		size_t pos = messageBuffer.find_first_of(DELIMINATOR);
+		size_t pos = messageBuffer.find(DELIMINATOR);
 		if (pos != string::npos) {
 			messages.push_back(messageBuffer.substr(0, pos));
 			messageBuffer.erase(0, pos + 2);
