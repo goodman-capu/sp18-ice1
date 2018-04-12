@@ -13,7 +13,7 @@ void CalcFramer::append(string chars)
 		size_t pos = messageBuffer.find(DELIMINATOR);
 		if (pos != string::npos) {
 			messages.push_back(messageBuffer.substr(0, pos));
-			messageBuffer.erase(0, pos + 2);
+			messageBuffer.erase(0, pos + DELIMINATOR.length());
 		} else {
 			break;
 		}
