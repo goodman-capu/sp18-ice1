@@ -27,6 +27,13 @@ int main(int argc, char *argv[])
 
 	CalcFramer framer;
 	// put any test code here that uses your framer
+    framer.append(test_str);
+    framer.printToStream(cerr);
+    while(framer.hasMessage()) {
+        cerr << "Pop one message:\n";
+        cerr << framer.topMessage() << "\n";
+        framer.popMessage();
+    }
 
 	cout << test_str << endl;
 
